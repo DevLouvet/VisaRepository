@@ -27,7 +27,8 @@ namespace Visa.API.Controllers
             };
 
             _cardRepository.Create(card);
-            return "value";
+            var cardFilled = _cardRepository.ValidateCard(card);
+            return new JsonResult(cardFilled);
         }
     }
 }
