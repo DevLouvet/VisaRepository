@@ -11,7 +11,7 @@ CREATE PROCEDURE ValidateCard
 )
 AS
 BEGIN
-	DECLARE @IdExist INT = NULL
+	DECLARE @IdExist INT = 0
 			, @TCard INT = NULL
 			, @VCard INT = 0
 
@@ -40,7 +40,7 @@ BEGIN
 						  ELSE 2 END
 	END
 	
-	IF @IdExist IS NOT NULL
+	IF @IdExist <> 0
 	BEGIN
 		UPDATE Cards
 		SET TCard = @TCard,

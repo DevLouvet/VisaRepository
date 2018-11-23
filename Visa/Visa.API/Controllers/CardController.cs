@@ -16,7 +16,7 @@ namespace Visa.API.Controllers
             _cardRepository = new CardRepository(cardDbContext);
         }
 
-        // GET api/values/5
+        // GET api/card/4444555566667777?expirationDate=122004
         [HttpGet("{id}")]
         public ActionResult<string> Get(string id, int expirationDate)
         {
@@ -26,13 +26,12 @@ namespace Visa.API.Controllers
                 ExpirationDate = expirationDate
             };
 
-            var cardFilled = _cardRepository.Find(card);
-            if (cardFilled == null)
+            var cardFilled = _cardRepository.ValidateCard(card);
+            if (_cardRepository.Find(card) == null)
             {
                 _cardRepository.Create(card);
             }
 
-            cardFilled = _cardRepository.ValidateCard(card);
             return new JsonResult(cardFilled);
         }
     }
