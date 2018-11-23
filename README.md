@@ -12,21 +12,16 @@ Test :
 - Modify the connectionstring in CardTest
 
 Input :
-- CardNumber
-- ExpirationDate
-
-Output :
-- Card Type
-- Result
-
-Rules :
 
 1. Card Number (Numeric 15 or 16 digits)
 2. Expiry date (MMYYYY)
-Validate Result
+
+Output :
+
 1. Result (Valid, Invalid, Does not exist)
 2. Card Type (Visa, Master, Amex, JCB or Unknown)
-Validation Rule
+
+Rules :
 1. Visa is a card number starting with 4.
 2. MasterCard is a card number starting with 5.
 3. Amex is a card number starting with 34, 37.
