@@ -64,14 +64,16 @@
     <Folder Include="dbo\4_Stored Procedures" />
     <Folder Include="dbo\2_Tables Scripts" />
     <Folder Include="dbo\3_Functions" />
+    <Folder Include="dbo\5_Tests" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\1_Tables\Cards.sql" />
     <Build Include="dbo\1_Tables\PrimeNumbers.sql" />
-    <Build Include="dbo\4_Stored Procedures\ValidateCard.sql" />
+    <None Include="dbo\4_Stored Procedures\ValidateCard.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="dbo\2_Tables Scripts\PrimeNumbers_Initialize.sql" />
     <None Include="dbo\3_Functions\fn_primeyear.sql" />
+    <None Include="dbo\5_Tests\Cards_Test.sql" />
   </ItemGroup>
 </Project>
