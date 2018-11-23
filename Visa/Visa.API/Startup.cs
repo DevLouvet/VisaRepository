@@ -10,6 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Swashbuckle.AspNetCore.Swagger;
 
 namespace Visa.API
 {
@@ -25,6 +26,10 @@ namespace Visa.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddSwaggerGen(swag => {
+                swag.SwaggerDoc("v1", new Info { Title = "Visa Api", Description = "Visa Validation Api" });
+            });
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 
@@ -40,6 +45,10 @@ namespace Visa.API
                 app.UseHsts();
             }
 
+            app.UseSwagger();
+            app.UseSwaggerUI(swag => {
+                swag.SwaggerEndpoint("/swagger/v1/swagger.json", "Visa Api");
+            });
             app.UseHttpsRedirection();
             app.UseMvc();
         }
