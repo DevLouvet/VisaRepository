@@ -60,16 +60,18 @@
   <ItemGroup>
     <Folder Include="Properties" />
     <Folder Include="dbo\" />
-    <Folder Include="dbo\Tables\" />
-    <Folder Include="dbo\Stored Procedures\" />
-    <Folder Include="dbo\Tables Scripts" />
+    <Folder Include="dbo\1_Tables" />
+    <Folder Include="dbo\4_Stored Procedures" />
+    <Folder Include="dbo\2_Tables Scripts" />
+    <Folder Include="dbo\3_Functions" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="dbo\Tables\Cards.sql" />
-    <Build Include="dbo\Tables\PrimeNumbers.sql" />
-    <Build Include="dbo\Stored Procedures\ValidateCard.sql" />
+    <Build Include="dbo\1_Tables\Cards.sql" />
+    <Build Include="dbo\1_Tables\PrimeNumbers.sql" />
+    <Build Include="dbo\4_Stored Procedures\ValidateCard.sql" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="dbo\Tables Scripts\PrimeNumbers_Initialize.sql" />
+    <None Include="dbo\2_Tables Scripts\PrimeNumbers_Initialize.sql" />
+    <None Include="dbo\3_Functions\fn_primeyear.sql" />
   </ItemGroup>
 </Project>

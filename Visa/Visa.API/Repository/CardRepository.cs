@@ -16,5 +16,10 @@ namespace Visa.API.Repository
         {
             return _cardDbContext.ValidateCard(card);
         }
+
+        public Card Find(Card card)
+        {
+            return _cardDbContext.Cards.FirstOrDefault(c => c.CardNumber == card.CardNumber && c.ExpirationDate == card.ExpirationDate);
+        }
     }
 }

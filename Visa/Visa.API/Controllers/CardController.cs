@@ -26,8 +26,13 @@ namespace Visa.API.Controllers
                 ExpirationDate = expirationDate
             };
 
-            _cardRepository.Create(card);
-            var cardFilled = _cardRepository.ValidateCard(card);
+            var cardFilled = _cardRepository.Find(card);
+            if (cardFilled == null)
+            {
+                _cardRepository.Create(card);
+            }
+
+            cardFilled = _cardRepository.ValidateCard(card);
             return new JsonResult(cardFilled);
         }
     }
